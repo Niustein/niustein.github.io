@@ -3,7 +3,18 @@
 
 <body>
     <h1>Hello World</h1>
-    <p>I'm hosted with Github Pages.</p>
+    <p><a href="./project1.html">#1</a></p>
+
+    <button onClick="sayHi()">Hi Steve</button>
+    <p id="testchange"></p>
+
+
+    <script>
+        function sayHi() {
+            document.getElementById("testchange").innerHTML = "<3 Steve";
+            console.log("<3 here too");
+        }
+    </script>
 </body>
 
 </html>
