@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <h1>Hello World</h1>
-    <p><a href="./project1.html">#1</a></p>
+    <div id="everything">
+        <h1>Hello World</h1>
+        <p><a href="./project1.html">#1</a></p>
 
-    <button onClick="sayHi()" id="sayHi">Hi Steve</button>
-    <p class="testchange"></p>
+        <button onClick="sayHi()" id="sayHi">Hi Steve</button>
+        <p class="testchange"></p>
 
-    <input type="text" id="upperSplit" placeholder="upperSplit">
-    <button onClick="upperSplit()">RAGE</button>
-    <p class="rage">1</p>
+        <input type="text" id="addWord" placeholder="addWord">
+        <button onClick="addWord()">Add Word</button>
+        <p class="rage">1</p>
 
-    <button onCLick="reset()" id="reset">CLEANUP TIME (reset)</button>
+        <button onCLick="reset()" id="reset">CLEANUP TIME (reset)</button>
 
-    <script>
-        let maxClick = 0;
-        function sayHi() {
-            maxClick++;
-            let appendText = "<3"
-            document.getElementsByClassName("testchange")[0].innerHTML += appendText;
-            console.log("<3 here too");
-            if (maxClick >= 5) {
-                document.getElementById("sayHi").disabled = true;
+        <script>
+            const wordArray = ["lorem ipsum", "abcdefg", "2346", "diamond", "correct"];
+            let wordArrayBase = wordArray.length;
+            let maxClick = 0;
+
+            function sayHi() {
+                maxClick++;
+                let appendText = "<3"
+
+                <!-- document.getElementsByClassName("testchange")[0].innerHTML += appendText; -->
+
+                let newDiv = document.createElement('div');
+                newDiv.innerHTML = wordArray[maxClick - 1];
+
+                document.getElementsByClassName("testchange")[0].appendChild(newDiv);
+
+                console.log("<3 here too");
+                if (maxClick == wordArray.length) {
+                    document.getElementById("sayHi").disabled = true;
+                }
             }
-        }
 
-        function upperSplit() {
-            let upperCaps = document.getElementById("upperSplit").value;
-            upperCaps = upperCaps.replaceAll(" ", "").toUpperCase();
-            document.getElementsByClassName("rage")[0].innerHTML = upperCaps;
-        }
+            function addWord() {
+                /*let upperCaps = document.getElementById("upperSplit").value;
+                upperCaps = upperCaps.replaceAll(" ", "").toUpperCase();
+                document.getElementsByClassName("rage")[0].innerHTML = upperCaps; */
 
-        function reset() {
-            maxClick = 0;
-            document.getElementsByClassName("testchange")[0].innerHTML = "";
-            document.getElementById("sayHi").disabled = false;
-            document.getElementsByClassName("rage")[0].innerHTML = "";
-        }
-    </script>
+                let addWord = document.getElementById("addWord").value;
+                wordArray.push(addWord)
+                document.getElementsByClassName("rage")[0].innerHTML = `${addWord} has been added to the list`;
+
+                //console.log(wordArray);
+                document.getElementById("sayHi").disabled = false;
+
+            }
+
+            function reset() {
+                maxClick = 0;
+                document.getElementsByClassName("testchange")[0].innerHTML = "";
+                document.getElementById("sayHi").disabled = false;
+                document.getElementsByClassName("rage")[0].innerHTML = "";
+                console.log(wordArray.length);
+
+                while (wordArrayBase.length > 5) {
+                    wordArray.pop()
+                }
+            }
+        </script>
+
+    </div>
 </body>
 
 </html>
