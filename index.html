@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <script src="landing-practice.js" defer></script>
 </head>
 
 <body>
@@ -13,60 +14,11 @@
         <button onClick="sayHi()" id="sayHi">Hi Steve</button>
         <p class="testchange"></p>
 
-        <input type="text" id="addWord" placeholder="addWord">
+        <input name="addText" type="text" id="addWord" placeholder="Add Text">
         <button onClick="addWord()">Add Word</button>
         <p class="rage">1</p>
 
         <button onCLick="reset()" id="reset">CLEANUP TIME (reset)</button>
-
-        <script>
-            const wordArray = ["lorem ipsum", "abcdefg", "2346", "diamond", "correct"];
-            let wordArrayBase = wordArray.length;
-            let maxClick = 0;
-
-            function sayHi() {
-                maxClick++;
-                let appendText = "<3"
-
-                <!-- document.getElementsByClassName("testchange")[0].innerHTML += appendText; -->
-
-                let newDiv = document.createElement('div');
-                newDiv.innerHTML = wordArray[maxClick - 1];
-
-                document.getElementsByClassName("testchange")[0].appendChild(newDiv);
-
-                console.log("<3 here too");
-                if (maxClick == wordArray.length) {
-                    document.getElementById("sayHi").disabled = true;
-                }
-            }
-
-            function addWord() {
-                /*let upperCaps = document.getElementById("upperSplit").value;
-                upperCaps = upperCaps.replaceAll(" ", "").toUpperCase();
-                document.getElementsByClassName("rage")[0].innerHTML = upperCaps; */
-
-                let addWord = document.getElementById("addWord").value;
-                wordArray.push(addWord)
-                document.getElementsByClassName("rage")[0].innerHTML = `${addWord} has been added to the list`;
-
-                //console.log(wordArray);
-                document.getElementById("sayHi").disabled = false;
-
-            }
-
-            function reset() {
-                maxClick = 0;
-                document.getElementsByClassName("testchange")[0].innerHTML = "";
-                document.getElementById("sayHi").disabled = false;
-                document.getElementsByClassName("rage")[0].innerHTML = "";
-                console.log(wordArray.length);
-
-                while (wordArrayBase.length > 5) {
-                    wordArray.pop()
-                }
-            }
-        </script>
 
     </div>
 </body>
