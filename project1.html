@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <link rel="stylesheet" href="tttStyle.css">
+    <script src="TTT.js" defer></script>
+</head>
+
 <body>
-    <h1>P1</h1>
-    <p><a href="./project1.html"></a>#1</p>
+    <H1>Tic-Tac-Toe</H1>
+    <button id="startGame" type="button" onclick="startGame()">Start Game</button>
+    <p id="turnTracker"></p>
+    <div id=" wholeBoard">
+        <div id="row1">
+            <button class="btnBoard" id="0" type="button" onClick="btnClick(this)" disabled></button>
+            <button class="btnBoard" id="1" type="button" onClick="btnClick(this)" disabled></button>
+            <button class="btnBoard" id="2" type="button" onClick="btnClick(this)" disabled></button>
+        </div>
+
+        <div id="row2">
+            <button class="btnBoard" id="3" type="button" onClick="btnClick(this)" disabled></button>
+            <button class="btnBoard" id="4" type="button" onClick="btnClick(this)" disabled></button>
+            <button class="btnBoard" id="5" type="button" onClick="btnClick(this)" disabled></button>
+        </div>
+
+        <div id="row3">
+            <button class="btnBoard" id="6" type="button" onClick="btnClick(this)" disabled></button>
+            <button class="btnBoard" id="7" type="button" onClick="btnClick(this)" disabled></button>
+            <button class="btnBoard" id="8" type="button" onClick="btnClick(this)" disabled></button>
+        </div>
+
+        <p><a href="index.html" class="returnHome">Return Home</a></p>
+
+    </div>
 </body>
 
 </html>

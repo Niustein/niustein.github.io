@@ -1,0 +1,33 @@
+body {
+    background-color: grey;
+}
+
+#wholeBoard {
+    display: flex;
+    flex-direction: column;
+}
+
+#row1 {
+    display: flex;
+}
+
+#row2 {
+    display: flex;
+}
+
+#row3 {
+    display: flex;
+}
+
+.returnHome {
+    height: 10px;
+}
+
+
+.btnBoard {
+    aspect-ratio: 1/1;
+    min-height: 33px;
+    min-width: 33px;
+    height: 15%;
+    width: 15%;
+}
