@@ -65,6 +65,7 @@ function btnClick(btnElement) {
         }
     } else {
         playerTrack === "x" ? playerTrack = "o" : playerTrack = "x";
+        document.getElementById("turnTracker").innerHTML = `It is ${playerTrack.toUpperCase()}'s turn to play`
     }
 }
 
